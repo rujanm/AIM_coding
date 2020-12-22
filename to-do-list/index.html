@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>To Do List</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js"></script>
+    </head>
+    <body>
+        
+        <div id="inlines">
+            <input id="input" type="text">
+            <div class="dropdown">
+                <button class="dropbtn">Add to</button>
+                <div class="dropdown-content">
+                  <button id="home" onclick="home()">Home-List</button>
+                  <button id="work" onclick="work()">Work-List</button>
+                </div>
+              </div>
+            <button id="clearAll">Clear All</button>
+        </div>
+        
+        <section class="lists">
+            <div id="ToDoList_Home">
+
+            </div>
+            <div id="ToDoList_Work">
+
+            </div>
+        </section>
+    </body>
+</html>
