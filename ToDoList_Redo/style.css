@@ -1,0 +1,17 @@
+#text,#add,#clear,#options{
+    display: inline-block;
+}
+ul li {
+    width: auto;
+    position: relative;
+    cursor: pointer;
+}
+ul{
+    display: inline-block;
+}
+li:hover{
+    background-color: grey;
+}
+.stroked{
+  text-decoration: line-through;
+}
