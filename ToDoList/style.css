@@ -1,0 +1,63 @@
+*{
+  box-sizing: border-box;
+}
+#inlines {
+    display: inline-block;
+    position: absolute;
+    top: 15%;
+    left: 35%;
+}
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    
+
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {background-color: #ddd;}
+  
+  .dropdown:hover .dropdown-content {
+      display: block;
+    }
+  .lists > div{
+    display: flex;
+    justify-content: space-between;
+      display: inline-block;
+      border: 1em;
+      border-color: black;
+  }
+  #ToDoList_Home{
+    position:absolute;
+    left: 15%;
+    top: 25%;
+  }
+  #ToDoList_Work{
+    position:absolute;
+    left: 65%;
+    top: 25%;
+  }
+  header{
+    position: absolute;
+    left: 40%;
+  }
+ #added:hover{
+background-color: blanchedalmond;
+cursor: pointer;
+ }
+ .line{
+   text-decoration: line-through;
+ }
+ 
