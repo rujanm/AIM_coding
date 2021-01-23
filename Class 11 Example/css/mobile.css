@@ -1,0 +1,11 @@
+
+nav {
+    display: flex;
+    width: 0%;
+    height: 0%;
+    flex-direction: column;
+}
+.is_open{
+    width: auto;
+    height: auto;
+}

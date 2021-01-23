@@ -1,11 +1,12 @@
 *{
   box-sizing: border-box;
 }
+
 #inlines {
-    display: inline-block;
-    position: absolute;
-    top: 15%;
-    left: 35%;
+display: inline-block;
+position: absolute;
+top: 15%;
+left: 35%;
 }
   
   .dropdown {
