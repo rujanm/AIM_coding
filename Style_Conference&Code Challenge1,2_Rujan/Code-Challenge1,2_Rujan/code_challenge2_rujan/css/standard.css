@@ -1,0 +1,12 @@
+nav {
+background-color: blue;
+display: flex;
+}
+a {
+justify-content: space-between;
+color: cyan;
+}
+.content {
+    font-size: 14px;
+    font-style: italic;
+}
