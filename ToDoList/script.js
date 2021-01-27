@@ -1,14 +1,13 @@
 $(document).ready(function(){
-    let i = 1;
-    let j = 1;
+    
     
     $("#home").click(function(){
         if($("#input").val() == ""){
             alert("Write something!");
         }
         else{
-            $("#ToDoList_Home").append("<p class ='added' id='" + i + "'>"  + $("#input").val() + "</p>");
-            i++;
+            $("#ToDoList_Home").append("<p class ='added'>"  + $("#input").val() + "</p>");
+            $("#input").val("");
         }
         
     });
@@ -17,8 +16,9 @@ $(document).ready(function(){
             alert("Write something!");
         }
         else{
-            $("#ToDoList_Work").append("<p class ='added' id='" + j + "'>"  + $("#input").val() + "</p>");
-            j++;
+            $("#ToDoList_Work").append("<p class ='added'>"  + $("#input").val() + "</p>");
+    
+            $("#input").val("");
         }
         
     });
