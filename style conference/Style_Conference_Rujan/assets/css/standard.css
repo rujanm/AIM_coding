@@ -132,13 +132,6 @@ table {
 }
 
 
-
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
-
 /*
   ========================================
   Custom styles
@@ -147,9 +140,10 @@ table {
 
 body {
     background: #11073fe3;
-    color: #273a6e;
+    color: rgb(39, 58, 110);
     font: 300 16px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+
 
 /*
   ========================================
@@ -158,15 +152,17 @@ body {
 */
 
 *,
-*::before,
-*::after {
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
 
 .container,
 .grid {
-    width: 960px;
     margin: 0 auto;
+    width: 960px;
 }
 
 .container {
@@ -195,19 +191,20 @@ body {
     width: 66.66%;
 }
 
+
 /*
   ========================================
   Clearfix
   ========================================
 */
 
-.group::before,
-.group::after {
+.group:before,
+.group:after {
     content: "";
     display: table;
 }
 
-.group::after {
+.group:after {
     clear: both;
 }
 
@@ -215,6 +212,7 @@ body {
     clear: both;
     *zoom: 1;
 }
+
 
 /*
   ========================================
@@ -233,12 +231,13 @@ body {
 }
 
 .row-alt {
-    background: #cbe2c1;
-    background: -webkit-linear-gradient(to right, #a1d3b0, #f6f1d3);
-    background: -moz-linear-gradient(to right, #a1d3b0, #f6f1d3);
-    background: linear-gradient(to right, #a1d3b0, #f6f1d3);
+    background: #c1d0e2;
+    background: -webkit-linear-gradient(to right, #8ea4cf, #b3d7e5);
+    background: -moz-linear-gradient(to right, #8ea4cf, #b3d7e5);
+    background: linear-gradient(to right, #8ea4cf, #b3d7e5);
     padding: 44px 0 22px 0;
 }
+
 
 /*
   ========================================
@@ -246,12 +245,19 @@ body {
   ========================================
 */
 
-h1, h3, h4, h5, p {
-    margin-bottom: 22px;
+h1,
+h2,
+h3,
+h4 {
+    color: #6c89db;
 }
 
-h1, h2, h3, h4 {
-    color: #6c89db;
+h1,
+h3,
+h4,
+h5,
+p {
+    margin-bottom: 22px;
 }
 
 h1 {
@@ -288,6 +294,7 @@ em {
     font-style: italic;
 }
 
+
 /*
   ========================================
   Leads
@@ -302,6 +309,7 @@ em {
     font-size: 21px;
     line-height: 33px;
 }
+
 
 /*
   ========================================
@@ -329,8 +337,9 @@ p a {
 
 .primary-header a:hover,
 .primary-footer a:hover {
-    color: #a9b2b9;
+    color: #acb8d8
 }
+
 
 /*
   ========================================
@@ -340,12 +349,12 @@ p a {
 
 .btn {
     border-radius: 5px;
-    display: inline-block;
-    margin: 0;
     color: #fff;
     cursor: pointer;
+    display: inline-block;
     font-weight: 400;
     letter-spacing: .5px;
+    margin: 0;
     text-transform: uppercase;
 }
 
@@ -367,8 +376,9 @@ p a {
 
 .btn-alt:hover {
     background: #fff;
-    color: #647188;
+    color: #668cc9;
 }
+
 
 /*
   ========================================
@@ -392,9 +402,10 @@ p a {
 .primary-nav {
     font-size: 14px;
     font-weight: 400;
-    letter-spacing: 0.5px;
+    letter-spacing: .5px;
     text-transform: uppercase;
 }
+
 
 /*
   ========================================
@@ -403,16 +414,17 @@ p a {
 */
 
 .primary-footer {
-    padding-bottom: 44px;
-    padding-top: 44px;
     color: #6c89db;
     font-size: 14px;
+    padding-bottom: 44px;
+    padding-top: 44px;
 }
 
 .primary-footer small {
     float: left;
     font-weight: 400;
 }
+
 
 /*
   ========================================
@@ -434,6 +446,7 @@ p a {
     margin-right: 0;
 }
 
+
 /*
   ========================================
   Home
@@ -441,10 +454,10 @@ p a {
 */
 
 .hero {
-    padding: 22px 80px 66px 80px;
-    line-height: 44px;
-    text-align: center;
     color: #fff;
+    line-height: 44px;
+    padding: 22px 80px 66px 80px;
+    text-align: center;
 }
 
 .hero h2 {
@@ -460,23 +473,39 @@ p a {
     color: #a9b2b9;
 }
 
+.teaser img {
+    border-radius: 5px;
+    display: block;
+    margin-bottom: 22px;
+    max-width: 100%
+}
+
+
 /*
   ========================================
   Speakers
   ========================================
 */
 
+.speaker {
+    margin-bottom: 44px;
+}
+
 .speaker-info {
     border: 1px solid #dfe2e5;
     border-radius: 5px;
     margin-top: 88px;
-    padding: 22px 0;
+    padding-bottom: 22px;
     text-align: center;
 }
 
-.speaker {
-    margin-bottom: 44px;
+.speaker-info img {
+    border-radius: 50%;
+    height: 130px;
+    margin: -66px 0 22px 0;
+    vertical-align: top;
 }
+
 
 /*
   ========================================
@@ -485,8 +514,8 @@ p a {
 */
 
 table {
-    width: 100%;
     margin-bottom: 44px;
+    width: 100%;
 }
 
 table:last-child {
@@ -556,6 +585,26 @@ table h4 {
     color: #a9b2b9;
 }
 
+
+/*
+  ========================================
+  Venue
+  ========================================
+*/
+
+.venue-theatre {
+    margin-bottom: 66px;
+}
+
+.venue-hotel {
+    margin-bottom: 22px;
+}
+
+.venue-map {
+    height: 264px;
+}
+
+
 /*
   ========================================
   Register
@@ -606,15 +655,4 @@ textarea {
 
 .register-group textarea {
     height: 78px;
-}
-
-img{
-    width: 187px;
-    height: 232px;
-}
-.teaser img{
-    border-radius: 5px;
-    display: block;
-    margin-bottom: 22px;
-    max-width: 100%;
 }
