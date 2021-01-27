@@ -1,8 +1,41 @@
-header{
-    position: relative;
+*{
+    box-sizing: border-box;
 }
-header > span{
+#menu{
+    display: block;
+    position: fixed;
+    top: 0.5em;
+    right: 0.5em;
+    color: black;
+}
+
+nav{
+    display: flex;
+    flex-direction: column;
+    color: black;
+    position: fixed;
+    top: 2em;
+    right: 15em;
+}
+nav > a{
+    height: 2.5em;
+}
+nav > a > i{
+    margin-top: 1.5em;
+    text-align: center;
+    
+}
+nav:last-child > i{
+    padding-left: 0.5em;
+}
+.teaser{
+    display: block;
     position: absolute;
-    top: 1em;
-    left: 1em;
+    left: 50%;
+    top: 55em;
+}
+main > h1{
+    width: 22ch;
+    margin-right: auto;
+    margin-left: auto;
 }
