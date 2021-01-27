@@ -50,4 +50,6 @@ cursor: pointer;
  .line{
    text-decoration: line-through;
  }
- 
+ p:hover{
+   background-color: rgb(146, 146, 99);
+ }

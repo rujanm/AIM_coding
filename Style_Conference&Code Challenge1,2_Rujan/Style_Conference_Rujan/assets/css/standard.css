@@ -608,4 +608,13 @@ textarea {
     height: 78px;
 }
 
-
+img{
+    width: 187px;
+    height: 232px;
+}
+.teaser img{
+    border-radius: 5px;
+    display: block;
+    margin-bottom: 22px;
+    max-width: 100%;
+}

@@ -27,4 +27,7 @@
   .lists {
       display: inline-block;
   }
+  p:hover{
+background: rgb(104, 104, 89);
+  }
   

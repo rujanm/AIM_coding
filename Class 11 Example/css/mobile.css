@@ -1,11 +1,8 @@
-
-nav {
-    display: flex;
-    width: 0%;
-    height: 0%;
-    flex-direction: column;
+header{
+    position: relative;
 }
-.is_open{
-    width: auto;
-    height: auto;
+header > span{
+    position: absolute;
+    top: 1em;
+    left: 1em;
 }

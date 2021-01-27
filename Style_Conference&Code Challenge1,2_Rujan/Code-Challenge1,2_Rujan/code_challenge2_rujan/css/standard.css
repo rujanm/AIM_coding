@@ -1,9 +1,9 @@
 nav {
 background-color: blue;
 display: flex;
+justify-content: space-between;
 }
 a {
-justify-content: space-between;
 color: cyan;
 }
 .content {
