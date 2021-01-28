@@ -10,23 +10,31 @@
 }
 
 nav{
-    display: flex;
+    display: none;
     flex-direction: column;
-    color: black;
+    color:cornsilk;
     position: fixed;
-    top: 2em;
-    right: 15em;
+    top: 1.5em;
+    right: 1.50em;
+    background-color: black;
+    text-align: center;
+    width: 2cm;
+    height: 6cm;
+    
 }
 nav > a{
     height: 2.5em;
+
 }
 nav > a > i{
-    margin-top: 1.5em;
+    margin-top: 1.75em;
     text-align: center;
+    margin-left: 0.5em;
+    
     
 }
-nav:last-child > i{
-    padding-left: 0.5em;
+nav:last-child{
+    padding-left: 1em;
 }
 .teaser{
     display: block;
@@ -35,7 +43,18 @@ nav:last-child > i{
     top: 55em;
 }
 main > h1{
-    width: 22ch;
+    
+    font-size: 0.70em;
+    max-width: 100%;
     margin-right: auto;
     margin-left: auto;
+}
+#mobile{
+    display: block;
+}
+#desktop{
+    display: none;
+}
+.show{
+    display: flex;
 }
