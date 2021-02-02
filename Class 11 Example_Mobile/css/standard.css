@@ -47,11 +47,14 @@ nav > a {
 main {
 	font-size: 2em;
 	position: absolute;
-	left: 50%;
+	left: 28%;
 	top: 50%;
 	transform: translate(-50%, calc(-50% + 1.5em));
-	white-space: nowrap;
+	white-space: normal;
 	text-align: center;
+	
+	
+	
 }
 main a {
 	font-size: 1rem;
@@ -112,6 +115,8 @@ main a:hover {
 #menu{
 	display: none;
 }
-#mobile{
-	display: none;
+#desktop{
+	white-space: pre;
+	
+
 }

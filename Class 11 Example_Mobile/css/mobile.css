@@ -17,25 +17,23 @@ nav{
     top: 1.5em;
     right: 1.50em;
     background-color: black;
-    text-align: center;
-    width: 2cm;
-    height: 6cm;
-    
+    text-align: center! important;  
+    height: 15em! important; 
+    width: auto! important;
 }
-nav > a{
-    height: 2.5em;
+nav > a {
+	color: white;
+	text-decoration: none;
+    margin-right: 1em;
+    margin-left: 1em;
+	line-height: 0;
+    vertical-align: middle;
+    height: 2em;
+    padding-top: 20%;
+}
 
-}
-nav > a > i{
-    margin-top: 1.75em;
-    text-align: center;
-    margin-left: 0.5em;
-    
-    
-}
-nav:last-child{
-    padding-left: 1em;
-}
+
+
 .teaser{
     display: block;
     position: absolute;
@@ -49,12 +47,32 @@ main > h1{
     margin-right: auto;
     margin-left: auto;
 }
-#mobile{
-    display: block;
-}
 #desktop{
-    display: none;
+    white-space: normal;
+    width: 22ch;
 }
+
 .show{
     display: flex;
+}
+
+main a{
+	border-width:0;
+	padding-top: calc(.5em + 3px);
+	padding-bottom: calc(.5em + 3px);
+	width: calc(20ch + 5px);
+	background: linear-gradient(90deg, blue, lightblue, turquoise);
+    text-shadow: 1px 1px black;
+    display:flex;
+    flex-direction: column;
+    margin-bottom: 0.5em;
+    margin-left: 3em;
+}
+header{
+    
+    width: auto;
+}
+.teaser > div::after {
+	border-right: 0;
+	
 }
