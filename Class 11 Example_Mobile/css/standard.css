@@ -47,10 +47,10 @@ nav > a {
 main {
 	font-size: 2em;
 	position: absolute;
-	left: 28%;
+	left: 50%;
 	top: 50%;
 	transform: translate(-50%, calc(-50% + 1.5em));
-	white-space: normal;
+	white-space: nowrap;
 	text-align: center;
 	
 	
@@ -71,6 +71,7 @@ main a {
 	text-decoration: none;
 	
 }
+
 main a:hover {
 	border-width:0;
 	padding-top: calc(.5em + 3px);
@@ -114,9 +115,4 @@ main a:hover {
 }
 #menu{
 	display: none;
-}
-#desktop{
-	white-space: pre;
-	
-
 }
