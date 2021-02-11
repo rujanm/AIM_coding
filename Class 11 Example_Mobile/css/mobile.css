@@ -34,6 +34,7 @@ nav > a {
 
 
 
+
 .teaser{
     display: block;
     position: absolute;
@@ -75,4 +76,7 @@ header{
 .teaser > div::after {
 	border-right: 0;
 	
+}
+br{
+    display: none;
 }
