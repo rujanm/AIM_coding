@@ -8,8 +8,15 @@ $(document).ready(function(){
     });
     $("a").mouseout(function(){
         $(this).animate({top: '0px'},3);
-        
       });
+    $("#about").click(function(){
+      $('html,body').animate({
+        scrollTop: $(".about").offset().top
+      }, 700);
+    });
+    $("#schedule").click(function(){
+      $("#pop").toggleClass(sup);
+    });
 
   });
   
