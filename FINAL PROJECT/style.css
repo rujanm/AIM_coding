@@ -73,12 +73,17 @@ h5 > a{
 main{
 	transform: translate(-50%,-50%);
 	position: absolute;
-	top: 60%;
+	top: 70%;
 	left: 50%;
 	width: 100vw;
 	height: auto;
 	display: flex;
 	flex-direction: column;
+}
+main>div>a{
+	border-style: solid;
+	border-width: 6px;
+	border-color: black;
 }
 div>a>img{
 	width: 6cm;
