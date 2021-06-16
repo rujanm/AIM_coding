@@ -1,0 +1,141 @@
+import numpy
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.optimize import curve_fit
+from scipy.optimize import minimize
+from numpy import empty
+
+
+def function(x, a, b, c):
+    func = a / (1 + np.power(x - b, 2) / np.power(c, 2))
+    return func
+
+
+def sortKey(e):
+    return e[1]
+
+
+def subLor(allData, curves):
+    ret = []
+    for x in allData:
+        hold = float(x[1]) - (
+                float(curves[1]) / (1 + np.power(float(x[0] - curves[0]), 2) / (np.power(float(curves[2]), 2))))
+        ret.append([x[0], hold])
+
+    return ret
+
+
+def findLor(allData):
+    newData = sorted(allData, key=sortKey, reverse=True)
+    amplitude = newData[0][1]
+    x0 = newData[0][0]
+    ind = allData.index([x0, amplitude])
+    ind2 = allData.index([x0, amplitude])
+    while allData[ind][1] > amplitude / 2:
+        ind += 1
+    dx = allData[ind][0] - allData[ind2][0]
+
+    #print(str(x0) + " " + str(amplitude) + " " + str(dx))
+
+    if amplitude <= 0:
+        return (0, 0, 1)
+    else:
+        return (x0, amplitude, dx)
+
+def Decon(file):
+    fileIn = open(file, "r+")
+
+    Lines = fileIn.readlines()
+    arrX = []
+    arrY = []
+    rawData = []
+    #arrX1 = []
+    #arrY1 = []
+
+    count = 0
+    for x in Lines:
+        y = x.split()
+        arrX.append(647 + (-96.4579 * float(y[0])) + (0.305 * np.power(float(y[0]), 2)) + (
+                -0.00031658 * np.power(float(y[0]), 3)) + (0.00000011319 * np.power(float(y[0]), 4)))
+        arrY.append(float(y[1]))
+        rawData.append([647 + (-96.4579 * float(y[0])) + (0.305 * np.power(float(y[0]), 2)) + (
+                -0.00031658 * np.power(float(y[0]), 3)) + (0.00000011319 * np.power(float(y[0]), 4)), float(y[1])])
+        #    if count != 0 and count != len(Lines) - 1:
+        #        arrX1.append(647+(-96.4579*float(y[0])) + (0.305*np.power(float(y[0]),2)) + (-0.00031658*np.power(float(y[0]), 3)) + (0.00000011319*np.power(float(y[0]), 4)))
+        #        arrY1.append(float(y[1]))
+        count += 1
+    fileIn.close()
+
+    curve = []
+
+    curve.append(findLor(rawData))
+    newData = subLor(rawData, curve[0])
+    # curve.append(findLor(newData))
+    # newData = subLor(newData, curve[1])
+    ind = 0
+
+    while curve[ind][1] >= 3000:
+        curve.append(findLor(newData))
+        ind += 1
+        newData = subLor(newData, curve[ind])
+
+    #testCurve = function(arrX, curve[5][1], curve[5][0], curve[5][2])
+    plt.plot(arrX, arrY, 'b-', label='data')
+    popt, pcov = curve_fit(function, arrX, arrY)
+    plt.plot(arrX, function(arrX, *popt), 'r-', label='fit: a=%5.3f, b=%5.3f, c=%5.3f' % tuple(popt))
+    plt.legend()
+    plt.show()
+
+    fullEq = 0
+    i = 0
+    while i < len(curve):
+        fullEq += function(arrX, curve[i][1], curve[i][0], curve[i][2])
+        i += 1
+    plt.plot(arrX,fullEq)
+
+
+    o=0
+    Curve = []
+    while o < 3*len(curve):
+        Curve.append('x'+str(o))
+        o+=1
+
+    #curve = tuple(curve).flatten()
+
+    def objective(Curve):
+        l=0
+        Function = 0
+        while l<len(curve):
+            Function += function(arrX, Curve[l*3+1], Curve[l*3], Curve[l*3+2])
+            l+=1
+
+        correlation_matrix = numpy.corrcoef(Function, arrY)
+        correlation_coeficient = correlation_matrix[0, 1]
+        r_squared = correlation_coeficient ** 2
+
+        return 1/r_squared
+
+
+
+
+    x0=curve
+    result = minimize(objective, x0, method='SLSQP')
+
+
+    counter = 0
+    while counter*3 < len(result.x):
+        fullEq = function(arrX, result.x[counter*3+1], result.x[counter*3], result.x[counter*3+2])
+        plt.plot(arrX, fullEq)
+        counter+=1
+    plt.plot(arrX, arrY,'r-', label='data')
+    plt.show()
+    return plt.show(), print(1/result.fun), print(result.x),print('------------------------------------------' + file + '------------------------------------------')
+
+Decon("/Users/rujan/Desktop/40 nm sorted/6.txt")
+
+
+count = 0
+
+# for x in allArray:
+#    print(str(x[0]) + " " + str(x[1]))
+#    count += 1
